@@ -1,32 +1,47 @@
 ### ABC093
 [問題ページ](https://atcoder.jp/contests/abc093/tasks)
 
-### A-Day of Takahashi
+### A-abc of ABC
 ```JavaScript
 "use strict";
 
 function main(arg) {
-    const date = arg.split("\n")[0].split(" ").join("");
-    const memo = [11,22,33,44,55,66,77,88,99,1010,1111,1212];
-    
-    console.log(memo.filter(n=>n<=date).length);
+    const S = arg.split("\n")[0].split("");
+    if(S.some(n=>n=="a") && S.some(n=>n=="b") && S.some(n=>n=="c")) {
+        console.log("Yes");
+    } else {
+        console.log("No");
+    }
 }
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
 
-### B-Maximum Sum
+### B-Small and Large Integers
 ```JavaScript
 "use strict";
-
-const main = arg => {
-    const N = arg.split("\n")[0].split(" ").map(n=>parseInt(n)).sort((a,b)=>a-b);
-    const K = arg.split("\n")[1];
-    const target = Math.max(...N) * Math.pow(2, K);
-    N.pop();
-    N.push(target);
     
-    console.log(N.reduce((m,n)=>m+n));
+const main = arg => {
+    arg     = arg.split("\n")[0].split(" ").map(n=>parseInt(n));
+    const A = arg[0];
+    const B = arg[1];
+    const K = arg[2];
+    
+    let N = [];
+    
+    for(let i=0; i<K; i++) {
+        if((A+i) > B) break;
+        N.push(A+i);
+    }
+    
+    for(let i=0; i<K; i++) {
+        if((B-i) < A) break;
+        N.push(B-i);
+    }
+    
+    let set = new Set(N);
+    
+    console.log([...set].sort((a,b)=>a-b).join("\n"));
 }
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
