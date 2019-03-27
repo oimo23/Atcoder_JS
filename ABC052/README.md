@@ -12,5 +12,5 @@ const main = arg => {
     console.log(Math.max(A, B));
 }
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
-w
+
 ```
