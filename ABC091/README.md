@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const coins = arg.split("\n")[0].split(" ").map(n=>parseInt(n));
     console.log(coins[0] + coins[1] >= coins[2] ? "Yes" : "No");
 }

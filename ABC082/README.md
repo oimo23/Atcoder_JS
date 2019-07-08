@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     arg = arg.split("\n")[0].split(" ").map(n=>parseInt(n));
     console.log(Math.ceil((arg[0] + arg[1]) / 2));
 }

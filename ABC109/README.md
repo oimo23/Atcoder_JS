@@ -3,22 +3,25 @@
 
 ### A-ABC333
 ```JavaScript
-function Main(input) {
-    parseInt(input);
-    if( input == 7 || input == 5 || input == 3 ) {
+"use strict";
+
+const main = input => {
+    input = parseInt(input);
+
+    if(input == 7 || input == 5 || input == 3) {
       console.log("YES");
     } else {
       console.log("NO");
     }
 }
-Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
 ```
 
 ### B-Shiritori
 ```JavaScript
-'use strict';
+"use strict";
 
-function main(arg) {
+const main = arg => {
     const N     = parseInt(arg.split("\n")[0]);
     const words = arg.split("\n").slice(1);
     const memo  = new Set();

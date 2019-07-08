@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     console.log(48 - parseInt(arg.split("\n")[0]));
 }
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));

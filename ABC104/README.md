@@ -3,15 +3,17 @@
 
 ### A-Rated for Me
 ```JavaScript
-function main(arg) {
+"use strict";
+
+const main = arg => {
     arg = parseInt(arg);
     
-    if( arg < 1200 ){
+    if(arg < 1200){
         console.log("ABC");
-    } else if( arg < 2800 ) {
-        console.log("ARC")
+    } else if(arg < 2800) {
+        console.log("ARC");
     } else {
-        console.log("AGC")
+        console.log("AGC");
     }
 }
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
@@ -20,9 +22,9 @@ main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ### B-AcCepted
 ```JavaScript
-'use strict';
+"use strict";
 
-function main(arg) {
+const main = arg => {
     arg = arg.split("\n");
     arg = arg[0];
     

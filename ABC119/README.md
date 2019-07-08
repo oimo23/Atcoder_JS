@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const S = arg.split("\n")[0].split("/");
     let answer;
     

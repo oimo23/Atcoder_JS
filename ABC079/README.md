@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const N = arg.split("\n")[0].split("");
 
     if(N[0] == N[1] && N[1] == N[2] || N[1] == N[2] && N[2] == N[3]) {

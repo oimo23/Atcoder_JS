@@ -3,7 +3,9 @@
 
 ### A-Infinite Coins
 ```JavaScript
-function main(arg) {
+"use strict";
+
+const main = arg => {
     const price   = parseInt(arg.split("\n")[0]);
     const dama1   = parseInt(arg.split("\n")[1]);
     console.log(price % 500 <= dama1 ? "Yes" : "No");

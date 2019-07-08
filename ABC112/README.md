@@ -3,10 +3,12 @@
 
 ### A-Programming Education
 ```JavaScript
-function main(arg) {
-   var age = arg.split("\n")[0];
-   var A   = parseInt(arg.split("\n")[1]);
-   var B   = parseInt(arg.split("\n")[2]);
+"use strict";
+
+const main = arg => {
+   const age = arg.split("\n")[0];
+   const A   = parseInt(arg.split("\n")[1]);
+   const B   = parseInt(arg.split("\n")[2]);
    
    if(age == 2) {
        console.log(A + B);
@@ -20,10 +22,10 @@ main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ### B-Time Limit Exceeded
 ```JavaScript
-'use strict';
+"use strict";
  
-function Main(INPUT) {
-    const input = INPUT.split("\n");
+const main = input => {
+    input = input.split("\n");
     const T = Number(input[0].split(" ")[1]);
     input.shift();
     let min = 9999;
@@ -37,7 +39,6 @@ function Main(INPUT) {
   
     console.log(min == 9999 ? "TLE" : min);
 }
- 
-Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
 
 ```

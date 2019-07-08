@@ -3,7 +3,7 @@
 
 ### A-Christmas Eve Eve Eve
 ```JavaScript
-function main(input) {
+const main = input => {
     input = parseInt(input);
     switch(input) {
       case 25:
@@ -28,7 +28,7 @@ main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 ```JavaScript
 "use strict";
 
-function Main(input) {
+const main = input => {
   input = input.split("\n");
  
   let n = parseInt(input[0], 10)
@@ -39,7 +39,7 @@ function Main(input) {
  
   console.log(sum - (top / 2))
 }
-Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
 
 ```
 
@@ -47,7 +47,7 @@ Main(require("fs").readFileSync("/dev/stdin", "utf8"));
 ```JavaScript
 "use strict";
 
-function Main(input) {
+const main = input => {
     input = input.split("\n");
     let temp = input[0].split(" ").map(x => parseInt(x));
     let N = temp[0];
@@ -65,6 +65,6 @@ function Main(input) {
     
     console.log(min);
 }
-Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
 
 ```

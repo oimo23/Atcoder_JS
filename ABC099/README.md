@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     console.log(arg.split("\n")[0].length <= 3 ? "ABC" : "ABD");
 }
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
@@ -16,7 +16,7 @@ main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const a = parseInt(arg.split("\n")[0].split(" ")[0]);
     const b = parseInt(arg.split("\n")[0].split(" ")[1]);
     

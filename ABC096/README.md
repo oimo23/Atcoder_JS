@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const date = arg.split("\n")[0].split(" ").join("");
     const memo = [11,22,33,44,55,66,77,88,99,1010,1111,1212];
     

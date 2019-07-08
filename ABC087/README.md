@@ -5,7 +5,7 @@
 ```JavaScript
 "use strice";
 
-function main(arg) {
+const main = arg => {
     const price   = parseInt(arg.split("\n")[0]);
     const cake    = parseInt(arg.split("\n")[1]);
     const donut   = parseInt(arg.split("\n")[2]);

@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const S = arg.split("\n")[0].split("");
     if(S.some(n=>n=="a") && S.some(n=>n=="b") && S.some(n=>n=="c")) {
         console.log("Yes");

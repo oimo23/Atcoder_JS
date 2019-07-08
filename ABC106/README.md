@@ -3,11 +3,11 @@
 
 ### A-Garden
 ```JavaScript
-'use strict'
+"use strict"
 
-function main(arg) {
-    let A = parseInt(arg.split(" ")[0]);
-    let B = parseInt(arg.split(" ")[1]);
+const main = arg => {
+    const A = parseInt(arg.split(" ")[0]);
+    const B = parseInt(arg.split(" ")[1]);
     console.log((A * B) - (A + B - 1));
 }
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
@@ -18,7 +18,7 @@ main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const N = parseInt(arg.split("\n")[0]);
     let answer = 0;
     

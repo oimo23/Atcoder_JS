@@ -3,15 +3,17 @@
 
 ### A-753
 ```JavaScript
-function Main(input) {
-    parseInt(input);
+"use strict";
+
+const main = input => {
+    input = parseInt(input);
     if( input == 7 || input == 5 || input == 3 ) {
       console.log("YES");
     } else {
       console.log("NO");
     }
 }
-Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
 
 ```
 
@@ -19,9 +21,9 @@ Main(require("fs").readFileSync("/dev/stdin", "utf8"));
 ```JavaScript
 "use strict";
 
-function Main(input) {
-    parseInt(input);
-    let num = input.split("");
+const main = input => {
+    input = parseInt(input);
+    const num = input.split("");
     
     let diff = [];
     
@@ -34,6 +36,6 @@ function Main(input) {
     console.log(answer);
     
 }
-Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
 
 ```

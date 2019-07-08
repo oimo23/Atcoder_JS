@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const date = arg.split("\n")[0].split("/");
     console.log("2018/" + date[1] + "/" + date[2]);
 }

@@ -3,9 +3,9 @@
 
 ### A-Right Triangle
 ```JavaScript
-'use strict'
+"use strict"
 
-function main(arg) {
+const main = arg => {
     const temp = arg.split(" ");
     console.log((temp[0] * temp[1]) / 2);
 }
@@ -15,9 +15,9 @@ main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ### B-Collatz Problem
 ```JavaScript
-'use strict';
+"use strict";
 
-function main(arg) {
+const main = arg => {
     let s = parseInt(arg);
     let memo  = new Set();
     let cnt = 1;

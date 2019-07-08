@@ -3,9 +3,9 @@
 
 ### A-AtCoder Crackers
 ```JavaScript
-'use strict';
+"use strict";
 
-function main(arg) {
+const main = arg => {
     console.log(arg.split(" ")[0] % arg.split(" ")[1] === 0 ? 0 : 1);
 }
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
@@ -14,9 +14,9 @@ main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ### B-Cakes and Donuts
 ```JavaScript
-'use strict';
+"use strict";
 
-function main(arg) {
+const main = arg => {
     const N = parseInt(arg.split("\n")[0]);
     
     if(N < 4) {

@@ -3,15 +3,14 @@
 
 ### A-Pair
 ```JavaScript
-'use strict';
+"use strict";
 
-function main(arg) {
+const main = arg => {
     arg = parseInt(arg);
-    let evenCnt = Math.floor(arg / 2);
-    let oddCnt  = arg - evenCnt;
+    const evenCnt = Math.floor(arg / 2);
+    const oddCnt  = arg - evenCnt;
     console.log(evenCnt * oddCnt);
 }
-
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```

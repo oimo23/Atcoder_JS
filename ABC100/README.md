@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const A = arg.split("\n")[0].split(" ")[0];
     const B = arg.split("\n")[0].split(" ")[1];
     if(A <=8 && B <=8) {
@@ -22,7 +22,7 @@ main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 ```JavaScript
 "use strict";
  
-function main(arg) {
+const main = arg => {
     arg = arg.split("\n")[0].split(" ");
     const D = arg[0];
     const N = arg[1] == "100" ? "101" : arg[1];

@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const toppings = arg.split("\n")[0].split("");
     console.log(700 + (100 * toppings.filter(n=>n=="o").length));
 }

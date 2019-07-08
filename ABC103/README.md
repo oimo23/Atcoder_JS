@@ -3,7 +3,9 @@
 
 ### A-Task Scheduling Problem
 ```JavaScript
-function main(arg) {
+"use strict";
+
+const main = arg => {
     arg = arg.split(" ").sort((a,b)=>a-b);
     console.log(arg[2] - arg[0]);
 }
@@ -13,9 +15,9 @@ main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ### B-String Rotation
 ```JavaScript
-'use strict';
+"use strict";
 
-function main(arg) {
+const main = arg => {
     const origin = arg.split("\n")[0];
     let   target = arg.split("\n")[1].split("");
     

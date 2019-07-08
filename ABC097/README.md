@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     const positions = arg.split("\n")[0].split(" ").slice(0,3);
     const limit     = arg.split("\n")[0].split(" ")[3];
 

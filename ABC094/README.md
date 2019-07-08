@@ -5,7 +5,7 @@
 ```JavaScript
 "use strict";
 
-function main(arg) {
+const main = arg => {
     arg = arg.split("\n")[0].split(" ").map(n=>parseInt(n));
     const A = arg[0];
     const B = arg[1];
