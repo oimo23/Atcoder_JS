@@ -1,7 +1,7 @@
 <h1 align="center">Atcoder_JS</h1>
 <p align="center">
   <a href="http://makeapullrequest.com">
-    <img src="https://img.shields.io/badge/Rating-grey-lightgrey.svg?style=flat-square" alt="PRs Welcome">
+    <img src="https://img.shields.io/badge/Rating-brown-critical.svg?style=flat-square" alt="PRs Welcome">
   </a>
 </p>
 <p align="center">
