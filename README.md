@@ -10,5 +10,6 @@
 
 ## 概要
 AtCoder を JavaScript で解いた記録を残すリポジトリです。  
+2019/07/10時点 言語別AC数 1位  
     
-[AtcoderProblems](https://kenkoooo.com/atcoder/?user=oimo23&rivals=&kind=category)
+[AtcoderProblems](https://kenkoooo.com/atcoder/#/user/oimo23)
