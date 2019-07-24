@@ -36,3 +36,18 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Modulo Summation
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0]);
+    const numbers = arg[1].split(" ").map(n=>parseInt(n));
+    
+    console.log(numbers.reduce((m,n)=>m+n) - N);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

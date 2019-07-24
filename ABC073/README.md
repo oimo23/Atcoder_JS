@@ -31,3 +31,28 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Write and Erase
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.split("\n");
+    const N = parseInt(arg[0]);
+    const A = arg.slice(1, N + 1).map(n=>parseInt(n)).sort((a,b)=>a-b);
+    
+    let cnt = 0;
+    
+    for(let i=0; i<N; i++) {
+        if(A[i] === A[parseInt(i) + 1]) {
+            i++;
+        } else {
+            cnt++;
+        }
+    }
+    
+    console.log(cnt);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

@@ -37,3 +37,27 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Not so Diverse
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0].split(" ")[0]);
+    const K = parseInt(arg[0].split(" ")[1]);
+    
+    const a = arg[1].split(" ").map(n=>parseInt(n));
+    const list = [...Array(200000)].fill(0);
+    
+    for(let i in a) {
+        list[a[i]]++;
+    }
+  
+    list.sort((a,b)=>b-a);
+    
+    console.log(N - list.slice(0, K).reduce((m,n)=>m+n));
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

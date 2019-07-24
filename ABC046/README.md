@@ -14,3 +14,18 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### B-AtCoDeerくんとボール色塗り / Painting Balls with AtCoDeer
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = ~~arg[0].split(" ")[0];
+    const K = ~~arg[0].split(" ")[1];
+    
+    console.log(K * (Math.pow((K-1), N-1)));
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

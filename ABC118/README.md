@@ -63,3 +63,44 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Monsters Battle Royale
+```JavaScript
+"use strict";
+    
+const getGcd = input => {
+  let len, a, b;
+  len = input.length;
+  a   = input[0];
+  
+  for(let i=1; i<len; i++) {
+    b = input[i];
+    a = gcdTwoNumbers(a, b);
+  }
+  
+  return a;
+}
+
+const gcdTwoNumbers = (x, y) => {
+  x = Math.abs(x);
+  y = Math.abs(y);
+
+  while(y) {
+    let t = y;
+    y = x % y;
+    x = t;
+  }
+  
+  return x;
+}
+
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0]);
+    const monsters = arg[1].split(" ").map(n=>parseInt(n));
+    
+    console.log(getGcd(monsters));
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

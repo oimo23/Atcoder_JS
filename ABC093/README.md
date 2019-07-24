@@ -46,3 +46,26 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Same Integers
+```JavaScript
+"use strict";
+
+const main = arg => {  
+  arg = arg.split("\n")[0].split(" ").map(n=>parseInt(n));
+  const A = arg[0];
+  const B = arg[1];
+  const C = arg[2];
+
+  const abc_sum = A + B + C;
+  let same_sum = Math.max(...[A, B, C]) * 3;
+
+  if (abc_sum % 2 !== same_sum % 2) same_sum += 3;
+
+  const answer = (same_sum - abc_sum) / 2;
+  console.log(answer);
+}
+
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+```

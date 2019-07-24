@@ -43,3 +43,55 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Skip
+```JavaScript
+"use strict";
+
+const getGcd = (input) => {
+  let len, a, b;
+	len = input.length;
+	a = input[0];
+	for (let i=1; i<len; i++) {
+		b = input[i];
+		a = gcdTwoNumbers(a, b);
+	}
+	return a;
+}
+
+const gcdTwoNumbers = (x, y) => {
+  x = Math.abs(x);
+  y = Math.abs(y);
+  while(y) {
+    let t = y;
+    y = x % y;
+    x = t;
+  }
+  return x;
+}
+
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0].split(" ")[0]);
+    const X = parseInt(arg[0].split(" ")[1]);
+    const numbers = arg[1].split(" ").map(n=>parseInt(n));
+    
+    const evenOdd = numbers.filter(n=>n % 2 === 0).length;
+    
+    if(N === 1) {
+        console.log(Math.abs(numbers[0] - X));
+        return;
+    }
+
+    let list = [];
+    
+    for(let i=0; i<N; i++) {
+        let temp = Math.abs(numbers[i] - X);
+        list.push(temp);
+    }
+    
+    console.log(getGcd(list));
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

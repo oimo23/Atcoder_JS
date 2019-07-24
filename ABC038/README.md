@@ -34,3 +34,31 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+
+### C-単調増加
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0]);
+    const A = arg[1].split(" ").map(n=>parseInt(n));
+    
+    let sum = 0;
+    
+    for(let left=0, right=0; left<N; left++) {
+        if(right < left) right = left;
+        
+        while(right < N && A[right] < A[right+1]) {
+            right++;
+        }
+        
+        sum += right - left + 1;
+    }
+    
+    console.log(sum);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

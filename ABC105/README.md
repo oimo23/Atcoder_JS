@@ -48,3 +48,34 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Base -2 Number
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    let N = parseInt(arg[0]);
+    
+    let answer = "";
+    
+    while(N !== 0) {
+        if(N % 2 !== 0) {
+            N--;
+            answer = "1" + answer;
+        } else {
+            answer = "0" + answer;
+        }
+        
+        N /= -2;
+    }
+    
+    if(answer === "") {
+        answer = 0;
+    }
+    
+    console.log(answer);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

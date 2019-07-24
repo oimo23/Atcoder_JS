@@ -15,3 +15,27 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Digits in Multiplication
+```JavaScript
+"use strict";
+
+const main = arg => {
+  arg = arg.trim().split("\n");
+  const N = parseInt(arg[0]);
+  
+  let answer = Infinity;
+  
+  for(let i=1; i<=Math.sqrt(N); i++) {
+      if(N % i === 0) {
+          const f = Math.max(String(i).length, String(N / i).length);
+          answer = Math.min(answer, f);
+      }
+  }
+  
+  console.log(answer);
+}
+
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+```

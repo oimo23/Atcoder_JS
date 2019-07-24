@@ -13,3 +13,24 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### B-A to Z String
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.split("\n");
+    const S = arg[0].split("");
+    
+    let flag    = false;
+    let answer  = [];
+    let counter = 0;
+    
+    const start = S.indexOf("A");
+    const end   = S.reverse().indexOf("Z");
+    
+    console.log((S.length - end) - start);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

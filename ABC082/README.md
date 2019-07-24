@@ -30,3 +30,35 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Good Sequence
+```JavaScript
+"use strict";
+
+const main = arg => {
+  arg = arg.trim().split("\n");
+  const N = parseInt(arg[0]);
+  const A = arg[1].split(" ").map(n=>parseInt(n));
+  
+  let answer = 0;
+  
+  const map = [...Array(100001)].fill(0);
+  
+  for(let i=0; i<N; i++) {
+      if(A[i] > 100000) {
+        answer++;
+      } else {
+        map[A[i]]++;
+      }
+  }
+  
+  for(let i=0; i<map.length; i++) {
+    if(i > map[i]) answer += map[i];
+    if(i < map[i]) answer += map[i] - i;
+  }
+  
+  console.log(answer);
+}
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+```

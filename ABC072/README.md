@@ -31,3 +31,26 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Together
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0]);
+    const a = arg[1].split(" ").map(n=>parseInt(n));
+    
+    const mapArray = [...Array(100000)].fill(0);
+    
+    for(let val of a) {
+        mapArray[val]++;
+        if(val > 0)     mapArray[val-1]++;
+        if(val < 99999) mapArray[~~val+1]++;
+    }
+    
+    console.log(Math.max(...mapArray));
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

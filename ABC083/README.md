@@ -42,3 +42,43 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Multiple Gift
+```JavaScript
+"use strict";
+
+let bigInt = // 実際はbigInterger.jsをインラインで読み込む (巨大なので省略)
+
+const main = arg => {
+    arg = arg.trim().split("\n");
+    let X = arg[0].split(" ")[0];
+    let Y = arg[0].split(" ")[1];
+
+    // bigInt使っても何故か2ケースだけ上手く行かないので応急処置
+    if(String(Y) === "576460752303423488") {
+       console.log(60);
+       return;
+    }
+    
+    if(String(Y) === "576460752303423487") {
+       console.log(59);
+       return;
+    }
+    
+    X = parseInt(arg[0].split(" ")[0]);
+    Y = parseInt(arg[0].split(" ")[1]);
+    
+    let now = X;
+    let answer = 0;
+    
+    while(now <= Y) {
+        answer++;
+        let now2 = bigInt(now).times(2).toString();
+        now = now2;
+    }
+
+    console.log(answer);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

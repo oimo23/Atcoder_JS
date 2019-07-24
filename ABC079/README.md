@@ -50,3 +50,33 @@ function lucasMaster(n) {
 }
 
 ```
+
+### C-Train Ticket
+```JavaScript
+"use strict";
+
+const main = arg => {
+    arg = arg.split("\n")[0].split("");
+    let answer = "";
+    
+    const dfs = (i, exp) => {
+        if (i === arg.length - 1) {
+          exp = exp + arg[i];
+          
+          if (eval(exp) === 7) {
+            answer = (exp + '=7');
+          }
+          
+          return;
+        } else {
+          dfs(i + 1, exp + arg[i] + '+');
+          dfs(i + 1, exp + arg[i] + '-');
+        }
+    }
+    
+    dfs(0, "");
+    console.log(answer);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

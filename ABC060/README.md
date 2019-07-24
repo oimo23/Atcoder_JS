@@ -44,3 +44,29 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Sentou
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.split("\n");
+    const N = parseInt(arg[0].split(" ")[0]);
+    const T = parseInt(arg[0].split(" ")[1]);
+    const t = arg[1].split(" ");
+    
+    let answer = 0;
+    
+    for(let i in t) {
+        if(t[parseInt(i) + 1] - t[i] < T) {
+            answer += t[parseInt(i) + 1] - t[i];
+        } else {
+            answer += T;
+        }
+    }
+    
+    console.log(answer);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

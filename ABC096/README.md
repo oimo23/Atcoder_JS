@@ -31,3 +31,47 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Grid Repainting 2
+```JavaScript
+"use strict"
+
+const main = arg => {
+  arg = arg.trim().split("\n");
+  const H = parseInt(arg[0].split(" ")[0]);
+  const W = parseInt(arg[0].split(" ")[1]);
+  
+  const tiles = arg.slice(1, H + 1).map(n=>n.split(""));
+  
+  const dx = [1, 0, -1, 0];
+  const dy = [0, 1, 0, -1];
+  
+  for(let i in tiles) {
+      for(let j in tiles[i]) {
+          let cnt = 0;
+          
+          for(let k=0; k<4; k++) {
+              let nx = dx[k] + parseInt(j);
+              let ny = dy[k] + parseInt(i);
+              
+              if(ny < 0 || ny > H - 1) continue;
+              if(nx < 0 || nx > W - 1) continue;
+             
+              if(tiles[ny][nx] === ".") {
+                  cnt++;
+              }
+          }
+          
+          if(tiles[i][j] === "#" && cnt === 4) {
+              console.log("No");
+              return;
+          }
+      }
+   }
+   
+   console.log("Yes");
+}
+
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+```

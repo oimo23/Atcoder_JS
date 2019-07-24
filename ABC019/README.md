@@ -46,3 +46,27 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+
+### C-高橋くんと魔法の箱
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0]);
+    const A = arg[1].split(" ").map(n=>parseInt(n));
+    
+    for(let i in A) {
+        while(A[i] % 2 !== 1) {
+            A[i] = A[i] / 2;
+        }
+    }
+    
+    const set = new Set(A);
+    
+    console.log(set.size);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

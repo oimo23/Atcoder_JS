@@ -42,3 +42,32 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-*3 or /2
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = ~~arg[0];
+    const a = arg[1].split(" ").map(n=>~~n);
+    
+    const limit = [];
+    
+    for(let i in a) {
+        let cnt = 0;
+        
+        while(a[i] % 2 === 0 || a[i] === 0) {
+            a[i] = a[i] / 2;
+            cnt++;
+        }
+        
+        limit.push(cnt);
+        cnt = 0;
+    }
+    
+    console.log(limit.reduce((m,n)=>m+n));
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

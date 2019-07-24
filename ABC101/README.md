@@ -26,3 +26,28 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Minimization
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0].split(" ")[0]);
+    const K = parseInt(arg[0].split(" ")[1]);
+    
+    const A = arg[1].split(" ").map(n=>parseInt(n));
+    
+    let answer = 0;
+    
+    if(N <= K) {
+        answer = 1;
+    } else {
+        answer = Math.ceil((N - K) / (K - 1)) + 1;
+    }
+    
+    console.log(answer);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

@@ -39,3 +39,25 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-To Infinity
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const S = arg[0].split("").map(n=>parseInt(n));
+    const K = parseInt(arg[1]);
+    
+    for(let i=0; i<K; i++) {
+        if(S[i] !== 1) {
+            console.log(S[i]);
+            return;
+        }
+    }
+    
+    console.log(1);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```

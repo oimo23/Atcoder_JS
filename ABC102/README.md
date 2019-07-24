@@ -24,3 +24,36 @@ const main = arg => {
 main(require('fs').readFileSync('/dev/stdin', 'utf8'));
 
 ```
+
+### C-Linear Approximation
+```JavaScript
+"use strict";
+    
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0]);
+    const A = arg[1].split(" ").map(n=>parseInt(n));
+    
+    let list = [];
+    
+    for(let i in A) {
+        let temp = A[i] - (parseInt(i) + 1);
+        
+        list.push(temp);
+    }
+    
+    let b = list.sort((a,b)=>a-b)[Math.floor(N / 2)];
+    
+    let answer = 0;
+
+    for(let i in A) {
+        let temp = Math.abs(A[i] - ((parseInt(i) + 1) + b));
+        
+        answer += temp;
+    }
+    
+    console.log(answer);
+}
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+```
